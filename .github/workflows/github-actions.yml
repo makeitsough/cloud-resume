@@ -2,12 +2,18 @@ name: CI/CD backend
 run-name: ${{ github.actor }} is running test script
 on: [push]
 jobs:
-  check-bats-version:
+  run-python-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: pip install pytest
+
+      - name: Run Python Tests
+        run: python tests/test_lambda_function.py
