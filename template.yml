@@ -19,7 +19,7 @@ Resources:
     Properties:
       CodeUri: my_lambda_function/
       Handler: app.handler
-      Runtime: python3.8
+      Runtime: python3.10
       Environment:
         Variables:
           DYNAMODB_TABLE: !Ref ViewCountTable
