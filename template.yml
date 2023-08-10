@@ -11,31 +11,51 @@ Globals:
     Timeout: 3
 
 Resources:
-  HelloWorldFunction:
+  LambdaFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: hello_world/
-      Handler: app.lambda_handler
+      CodeUri: http-crud-tutorial-function/
+      Handler: app.lambda_function.handler/
       Runtime: python3.10
       Architectures:
         - x86_64
       Events:
-        HelloWorld:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        HttpCrudTutorialFunctionAny:
+          Type: Api
           Properties:
-            Path: /hello
-            Method: get
+            Path: /http-crud-tutorial-function
+            Method: ANY
+        ItemsGet:
+          Type: Api
+          Properties:
+            Path: /items
+            Method: GET
+        ItemsPut:
+          Type: Api
+          Properties:
+            Path: /items
+            Method: PUT
+        ItemByIdDelete:
+          Type: Api
+          Properties:
+            Path: /{id}
+            Method: DELETE
+        ItemByIdGet:
+          Type: Api
+          Properties:
+            Path: /{id}
+            Method: GET
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  HelloWorldApi:
-    Description: 'API Gateway endpoint URL for Prod stage for Hello World function'
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/'
-  HelloWorldFunction:
-    Description: 'Hello World Lambda Function ARN'
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: 'Implicit IAM Role created for Hello World function'
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+  LambdaFunctionApi:
+    Description: 'API Gateway endpoint URL for Prod stage for LambdaFunction'
+    Value: !Sub 'https://kf7thmjjdb.execute-api.us-east-1.amazonaws.com/'
+  LambdaFunctionFunction:
+    Description: 'Lambda Function ARN'
+    Value: !GetAtt LambdaFunction.Arn
+  LambdaFunctionFunctionIamRole:
+    Description: 'Implicit IAM Role created for LambdaFunction'
+    Value: !GetAtt LambdaFunctionRole.Arn
