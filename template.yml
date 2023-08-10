@@ -14,8 +14,8 @@ Resources:
   LambdaFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: http-crud-tutorial-function/
-      Handler: app.lambda_function.handler/
+      CodeUri: ./http-crud-tutorial-function/
+      Handler: lambda_function.handler/
       Runtime: python3.10
       Architectures:
         - x86_64
