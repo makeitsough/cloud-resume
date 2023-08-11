@@ -9,7 +9,7 @@ root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, root_dir)
 
 # Import handler function
-from http_crud_tutorial_function.lambda_function import handler
+from updateDB.lambda_function import handler
 
 @pytest.fixture
 def mock_dynamodb_resource():

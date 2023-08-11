@@ -1,0 +1,64 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'cloud-resume-backend
+
+  Sample SAM Template for cloud-resume-backend
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: LambdaFunction
+      Handler: lambda_function.handler/
+      Runtime: python3.10
+      Architectures:
+      - x86_64
+      Events:
+        HttpCrudTutorialFunctionAny:
+          Type: Api
+          Properties:
+            Path: /http-crud-tutorial-function
+            Method: ANY
+        ItemsGet:
+          Type: Api
+          Properties:
+            Path: /items
+            Method: GET
+        ItemsPut:
+          Type: Api
+          Properties:
+            Path: /items
+            Method: PUT
+        ItemByIdDelete:
+          Type: Api
+          Properties:
+            Path: /{id}
+            Method: DELETE
+        ItemByIdGet:
+          Type: Api
+          Properties:
+            Path: /{id}
+            Method: GET
+    Metadata:
+      SamResourceId: LambdaFunction
+Outputs:
+  LambdaFunctionApi:
+    Description: API Gateway endpoint URL for Prod stage for LambdaFunction
+    Value:
+      Fn::Sub: https://kf7thmjjdb.execute-api.us-east-1.amazonaws.com/
+  LambdaFunctionFunction:
+    Description: Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - LambdaFunction
+      - Arn
+  LambdaFunctionFunctionIamRole:
+    Description: Implicit IAM Role created for LambdaFunction
+    Value:
+      Fn::GetAtt:
+      - LambdaFunctionRole
+      - Arn
