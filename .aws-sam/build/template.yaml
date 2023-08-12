@@ -45,20 +45,3 @@ Resources:
             Method: GET
     Metadata:
       SamResourceId: LambdaFunction
-Outputs:
-  LambdaFunctionApi:
-    Description: API Gateway endpoint URL for Prod stage for LambdaFunction
-    Value:
-      Fn::Sub: https://kf7thmjjdb.execute-api.us-east-1.amazonaws.com/
-  LambdaFunctionFunction:
-    Description: Lambda Function ARN
-    Value:
-      Fn::GetAtt:
-        - HttpCrudTutorialFunction
-        - Arn
-  LambdaFunctionFunctionIamRole:
-    Description: Implicit IAM Role created for LambdaFunction
-    Value:
-      Fn::GetAtt:
-        - HttpCrudTutorialFunctionRole
-        - Arn
