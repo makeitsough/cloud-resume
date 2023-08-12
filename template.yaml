@@ -13,7 +13,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: http-crud-tutorial-function
-      CodeUri: LambdaFunction
+      CodeUri: ./updateDB/
       Handler: lambda_function.handler/
       Runtime: python3.10
       Architectures:
