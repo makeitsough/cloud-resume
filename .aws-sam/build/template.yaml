@@ -16,7 +16,7 @@ Resources:
       Handler: lambda_function.handler/
       Runtime: python3.10
       Architectures:
-      - x86_64
+        - x86_64
       Events:
         HttpCrudTutorialFunctionAny:
           Type: Api
@@ -54,11 +54,11 @@ Outputs:
     Description: Lambda Function ARN
     Value:
       Fn::GetAtt:
-      - LambdaFunction
-      - Arn
+        - HttpCrudTutorialFunction
+        - Arn
   LambdaFunctionFunctionIamRole:
     Description: Implicit IAM Role created for LambdaFunction
     Value:
       Fn::GetAtt:
-      - LambdaFunctionRole
-      - Arn
+        - HttpCrudTutorialFunctionRole
+        - Arn
