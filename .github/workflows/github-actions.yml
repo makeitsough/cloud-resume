@@ -14,4 +14,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - run: sam build
-      - run: sam deploy
+      - run: sam deploy --no-confirm-changeset
