@@ -18,3 +18,5 @@ def handler(event, context, dynamodb_resource=None):
     table.put_item(Item={'id': '0', 'views': new_views})
 
     return new_views
+
+    ## test comment 8:49 8/12
