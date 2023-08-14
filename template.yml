@@ -20,32 +20,6 @@ Resources:
       Runtime: python3.10
       Architectures:
         - x86_64
-      Events:
-        HttpCrudTutorialFunctionAny:
-          Type: Api
-          Properties:
-            Path: /http-crud-tutorial-function
-            Method: ANY
-        ItemsGet:
-          Type: Api
-          Properties:
-            Path: /items
-            Method: GET
-        ItemsPut:
-          Type: Api
-          Properties:
-            Path: /items
-            Method: PUT
-        ItemByIdDelete:
-          Type: Api
-          Properties:
-            Path: /{id}
-            Method: DELETE
-        ItemByIdGet:
-          Type: Api
-          Properties:
-            Path: /{id}
-            Method: GET
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
