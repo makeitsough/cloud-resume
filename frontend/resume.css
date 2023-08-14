@@ -1,0 +1,128 @@
+/* resume.css */
+
+/* Reset default margins and paddings */
+body,
+h1,
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.section-item {
+  margin-left: 20px;
+}
+
+.section-item li {
+  margin-bottom: 10px;
+}
+
+.section-item strong {
+  font-weight: bold;
+}
+
+.section-item a {
+  color: #0066cc;
+}
+
+.section-item a:hover {
+  text-decoration: underline;
+}
+
+/* Style the contact details section */
+ul.contact-details {
+  margin-bottom: 20px;
+}
+
+ul.contact-details li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Style the projects section */
+.section.projects {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* Style the education section */
+.section.education {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* Style the experience section */
+.section.experience {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* Style the experience section */
+.section.technical {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* Style the experience section */
+.section.count {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* Add spacing between experience items */
+.section.experience .section-item {
+  margin-bottom: 20px;
+}
+
+/* Add a separator between experience items */
+.section.experience .section-item:not(:last-child) {
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 20px;
+}

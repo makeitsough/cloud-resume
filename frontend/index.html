@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Paul Schofield - Resume</title>
+  <link rel="stylesheet" type="text/css" href="resume.css">
+</head>
+<body onload="getCount()">
+  <div class="container">
+  <h1>Paul Schofield</h1>
+  <h2>Software Engineer</h2>
+  <ul class="contact-details">
+    <li>267-504-1527</li>
+    <li>paul.schofield.us@gmail.com</li>
+    <li>Brooklyn, NY</li>
+    <li><a href="https://linkedin.com/in/paul-schofield-io/">linkedin.com/in/paul-schofield-io/</a></li>
+    <li><a href="https://github.com/makeitsough">github.com/makeitsough</a></li>
+    <li><a href="https://paulschofield.dev">paulschofield.dev</a></li>
+  </ul>
+  <div class="section education">
+    <h2 class="section-header">Education and Certifications</h2>
+<li>
+<strong>Certified Cloud Practitioner,</strong> Amazon Web Services  | July 2023<br>
+</li>
+<li>
+<strong>Certificate, Software Development,</strong>  Fullstack Academy | November 2022 — April 2023<br>
+</li>
+<li>
+<strong>Bachelor of Arts,</strong> Temple University | September 2013 — May 2019<br>
+</li>
+</ul>
+
+<div class="section projects">
+  <h2 class="section-header">Projects</h2>
+  <ul class="section-item">
+  
+    <li>
+      <strong>Cloud Resume</strong> | August 2023 |
+      serverless website deployed using AWS Lambda, 
+      DynamoDB, CloudFront edge distributions and CI/CD actions with infrastructure-as-code.
+      See source on <a href="https://github.com/makeitsough/cloud-resume-backend">Github</a>
+    </li>
+  
+    <li>
+      <strong>Howlr</strong> | April 2023 | 
+      A social app for finding dog walkers and pet-friendly resources. Built event locations (Google Maps API), sitter discovery page; 
+      collaborated on data model and API design. See source on <a href="https://github.com/team-asteroids/capstone">Github</a>
+
+    </li>
+    <li>
+      <strong>Grace Shopper Ecommerce site</strong> | February 2023 |
+      Created Amazon-inspired ecommerce site with guest checkout, intuitive navigation, and admin controls. 
+      Engineered checkout, admin panel, various API routes and frontend modules using React, Redux, Express, and Sequelize.
+      See source on  <a href="https://github.com/ecom-team-saber/BookStore">Github</a>
+  </ul>
+</div>
+
+  <div class="section technical">
+    <h2 class="section-header">Technical Skills</h2>
+    <ul class="section-item">
+      <li>Proficient: JavaScript,
+        React,
+        AWS Infrastructure (Lambda, API Gateway, DynamoDB),
+        PostgreSQL,
+        Python,
+        Next.js,
+        Express,
+        Git</li>
+    </ul>
+  </div>
+
+  <div class="section experience">
+    <h2 class="section-header">Experience</h2>
+    <ul class="section-item">
+      <li>
+        <strong>Dispute Resolution Specialist</strong> | Lithic | New York, NY | September 2021 - October 2022<br>
+        Successfully recovered more than $100,000 in customer funds for the Privacy.com consumer card product, while maintaining a dispute win-rate of 99% and above.<br>
+        Utilized Google Sheets and SQL to log dispute events and track financial data, enabling detailed analysis and streamlined tracking of dispute outcomes.<br>
+        Developed dispute templates for various authorization and collaboration dispute categories, streamlining the dispute resolution process for enhanced efficiency and customer satisfaction.
+      </li>
+      <li>
+        <strong>Retail Sales Consultant</strong> | Comcast | Philadelphia, PA | December 2020 - September 2021<br>
+        Led store sales in mobile products during March and April 2021; ranked second overall in the Northeast region in May and top ten in June.<br>
+        Provided education to customers on Xfinity's five distinct product lines, catering to their implicit and explicit needs, buying criteria, and evolving situations.<br>
+        Initiated the development of the team's approach to improve customer experience and maintain high Net Promoter Scores by ensuring positive interactions throughout the customer journey.
+      </li>
+      <li>
+        <strong>Research Assistant</strong> | Temple Neuroeconomics Lab | Philadelphia, PA | September 2020 - December 2020<br>
+        Assisted with the design and implementation of an ongoing meta-analysis and systematic review, helping to determine inclusion and exclusion criteria for various research.<br>
+        Performed literature review on existing research in neuroeconomics.
+      </li>
+    </ul>
+  </div> 
+
+  <div class="section count" id="visitor_count">
+    <strong></strong>
+  </div>
+  <script>
+    function getCount() {
+      fetch('https://t7gg4mwegzu65ddwkzwl7yg2oa0qjgph.lambda-url.us-east-1.on.aws/')
+        .then(response => response.text())
+        .then(data => {
+          const count = parseInt(data); // Assuming the response is just a number
+          document.getElementById("visitor_count").innerText = `You are person number ${count} visiting this page`;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    getCount(); // Call the function to fetch and update the visitor count on page load
+  </script>
+  </div>
+</body>
+</html>
